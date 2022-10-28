@@ -1,31 +1,27 @@
 const fs = require('fs');
 const util = require ('util');
-
 const readFromFile = util.promisify(fs.readFile);
+
 /**
- *  Function to write data to the JSON file given a destination and some content
- *  @param {string} destination The file you want to write to.
- *  @param {object} content The content you want to write to the file.
- *  @returns {void} Nothing
+ *  @param {string} location - this is what file we want
+ *  @param {object} value - what we are writting to our file.
  */
-const writeToFile = (destination, content) =>
-    fs.writeFile(destination, JSON.stringify(content, null, 4), (err) => 
-        err ? console.error(err) : console.info(`\nData written to ${destination}`)
+const writeToFile = (location, value) =>
+    fs.writeFile(location, JSON.stringify(value,null, 5), (err) => 
+        err ? console.error(err) : console.info(`\nSuccessfully written to ${location} !`)
         );
 /**
- *  Function to read data from a given a file and append some content
- *  @param {object} content The content you want to append to the file.
- *  @param {string} file The path to the file you want to save to.
- *  @returns {void} Nothing
+ *  @param {object} object this is the object we want to append
+ *  @param {string} file where we save our data
  */
-const readAndAppend = (content, file) => {
+const readAndAppend = (object, file) => {
     fs.readFile(file, 'utf8', (err, data) => {
         if(err) {
             console.error(err);
         } else {
-            const parsedData = JSON.parse(data);
-            parsedData.push(content);
-            writeToFile(file, parsedData);
+            const dataP = JSON.parse(data);
+            dataP.push(object);
+            writeToFile(file, dataP);
         }
     });
 };
