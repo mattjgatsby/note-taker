@@ -3,13 +3,14 @@ const fs = require("fs");
 const path = require("path");
 const PORT = process.env.port || 3001;
 const app = express();
+const api = require('./routes/index.js')
 
 //middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/api", api)
 
-
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 //get route for notes.html
 app.get('/notes', (req, res) =>
