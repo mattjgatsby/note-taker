@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![Page Gif](./public/assets/image/gif/Untitled_%20Oct%2028%2C%202022%208_32%20PM.gif)
+
 ## Description
 This applictaion is a simple way to write out and save notes. 
 Its clean and simple UI makes it easy to keep track of task and organise your thoughts.
