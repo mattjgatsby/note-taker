@@ -7,7 +7,7 @@ This applictaion is a simple way to write out and save notes.
 Its clean and simple UI makes it easy to keep track of task and organise your thoughts.
 I put this application together in order to work with node.js and routing methods.
 
-[Visit the site!]
+[Visit the site!](https://secure-mountain-19804.herokuapp.com/)
 
 ## Technology Used
 * Node.js
